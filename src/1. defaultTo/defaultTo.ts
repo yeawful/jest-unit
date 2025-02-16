@@ -2,8 +2,8 @@
 // Если первое значение `null`, `NaN` или `undefined`, то должно быть возвращено значение по умолчанию.
 // В остальных случаях возвращается первый аргумент.
 
-const defaultTo = (a: any, b: number = 10): any => {
-  if (a !== undefined && a !== null && !Number.isNaN(a)) {
+const defaultTo = (a: number, b: number = 10): number => {
+  if (!Number.isNaN(a)) {
     return a;
   }
   return b;

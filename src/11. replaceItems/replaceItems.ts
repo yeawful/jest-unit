@@ -1,4 +1,6 @@
-const replaceItemsClear = (arr: (number | string)[], item: number | string, replaceItem: number | string): (number | string)[] => {
+type ItemType = number | string;
+
+const replaceItemsClear = (arr: ItemType[], item: ItemType, replaceItem: ItemType): ItemType[] => {
   return arr.map((currentValue) => {
     if (currentValue === item) {
       return replaceItem;
@@ -8,7 +10,7 @@ const replaceItemsClear = (arr: (number | string)[], item: number | string, repl
   });
 };
 
-const replaceItemsMutate = (arr: (number | string)[], item: number | string, replaceItem: number | string): (number | string)[] => {
+const replaceItemsMutate = (arr: ItemType[], item: ItemType, replaceItem: ItemType): ItemType[] => {
   arr.forEach((currentValue, index, array) => {
     if (currentValue === item) {
       array[index] = replaceItem;

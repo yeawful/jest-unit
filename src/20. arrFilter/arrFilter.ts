@@ -24,12 +24,12 @@
 
 // *которые не совпадают ни с одним из элементов массива*
 
-type FilterFunction = (element: any) => boolean;
+type FilterFunction<T> = (element: T) => boolean;
 
-const arrFilter = () => ({
+const arrFilter = <T>() => ({
   inRange:
-    (a: number, b: number): FilterFunction =>
-    (element: any): boolean => {
+    (a: number, b: number): FilterFunction<T> =>
+    (element: T): boolean => {
       if (a > b) {
         return false;
       }
@@ -44,14 +44,14 @@ const arrFilter = () => ({
     },
 
   inArray:
-    (array: any[]): FilterFunction =>
-    (element: any): boolean => {
+    (array: T[]): FilterFunction<T> =>
+    (element: T): boolean => {
       return array.includes(element);
     },
 
   notInArray:
-    (array: any[]): FilterFunction =>
-    (element: any): boolean => {
+    (array: T[]): FilterFunction<T> =>
+    (element: T): boolean => {
       return !array.includes(element);
     },
 });

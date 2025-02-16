@@ -1,9 +1,9 @@
-const moveToStart = (arr: any[], n: number): any[] => {
+const moveToStart = <T>(arr: T[], n: number): T[] => {
   if (n >= arr.length) {
     return [...arr];
   }
 
-  const result: any[] = [];
+  const result: T[] = [];
 
   for (let i = arr.length - n; i < arr.length; i++) {
     result.push(arr[i]);

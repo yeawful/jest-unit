@@ -2,10 +2,10 @@
 
 type Fun = () => void;
 
-const once = (fun: Fun): Fun => {
+const once = (fun: Fun) => {
   let funUse = false;
 
-  return (): void => {
+  return () => {
     if (!funUse) {
       funUse = true;
       fun();

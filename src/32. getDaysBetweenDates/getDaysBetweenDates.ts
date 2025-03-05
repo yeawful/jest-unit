@@ -1,16 +1,17 @@
 // Реализуйте функцию getDaysBetweenDates которая принимает на вход две даты и возвращает количество полных дней между ними.
 
+const getHours = (date: string | Date): number => {
+  const dateObj = new Date(date);
+  return dateObj.getTime() / 1000 / 3600;
+};
+
 const getDaysBetweenDates = (date1: string | Date, date2: string | Date): number => {
   if (date1 === undefined || date2 === undefined) {
     throw new TypeError('TypeError');
   }
 
-  const firstDate = new Date(date1);
-  const secondDate = new Date(date2);
-  const ms1 = firstDate.getTime();
-  const ms2 = secondDate.getTime();
-  const hours1 = ms1 / 1000 / 3600;
-  const hours2 = ms2 / 1000 / 3600;
+  const hours1 = getHours(date1);
+  const hours2 = getHours(date2);
 
   if (hours2 > hours1) {
     return Math.floor((hours2 - hours1) / 24);

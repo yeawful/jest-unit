@@ -4,8 +4,7 @@
 // Используйте Set для реализации этой функции.
 
 const unique = <T>(arr: T[]): T[] => {
-  const set = new Set(arr);
-  return [...set];
+  return [ ...new Set(arr) ];
 };
 
 export default unique;
